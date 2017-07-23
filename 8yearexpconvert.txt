@@ -1,0 +1,36 @@
+Google:
+1. phone Screen, Find max and min in an array with minimum number of comparisons possible
+2, three variations of this problem ( there were two easier version which  I don’t remember but the hardest one was this ): Given a mapping of  phone number  prefix and  carrier ( At&t ) + cost by that provider for the number. For e.g
+425 At&t  2
+425 verizon 1
+4254 at&t 3
+Now if you are provided with a phone number find the lowest carrier. Key catch points:
+i. All prefixes are possible.
+ii. A carrier might provide different cost for same number  ( but different prefixes ), In such a case the longest prefix cost is final.  I solved all versions.
+
+2. Design a netflix like system for streaming movies. This was my best interview I had spent a lot of time reading high scalability and other online materials and it all paid out well. I remember writing code for some small component but most of the discussion was on system design level. I used consistent hashing to design a fault tolerant system which had deduplication at database level. Lot of discussion on every design choice
+
+3. Design a Game ( write code ). The game presents users with a grid and places mirrors onto it . All mirrors have a slope of +1 or -1. Also the user is given a start point with the direction where a light ray will enter the grid. The user must predict where the light ray will exit the grid. If user predicts correctly create a new harder puzzle. The key insights are:
+i. What is a harder puzzle ? The ideal defintion is more number of bounces. Hence generating the grid is the hardest part of the problem
+ii. Calculating exit point
+iii. Class Desing since there is a user facing side it’s a good candidate for a multithreaded system.
+
+I was able to design the class but was not able to finish writing the full code. I wrote createGrid , multithreaded getInput and partial code for CalculateCorrectSolution ( explained the algo completely )
+
+4. What is a web cache. What are the advantages / disadvantages. I said i don’t know the term can u explain. The interviewer explained web cache as browser cache. From there the discussion went to :
+i. Advantages / Disadvantages of cache
+ii. Write an LRU cache.  ( I was writing the full code but he asked me to explain algo and write pseudo code )
+iii. how will you change the code if this cache is for youtube
+iv Where to cache in case of something like youtube
+v. System design youtube ( the interviewer asked incredible level of detail
+vi. Calculate the size of cache required for youtube based on my design. 
+vii. Calculate cache miss rate based on the same design. ( turned out we have around 0% cache miss if designed well, I was able to get there based on a some simple assumptions about population of US, size of avg video etc )
+This interview went well
+
+5. This was my worst interview. Though question was quite easy I got a brain freeze and gave multiple wrong answers which were shot down. Finally I took a few minutes to regain my composure and solved the problem but by then the damage was done. My code was clean and complete but the interviewer was expecting to ask a second question ( I think ). Since I took too much time on this one he didn’t ask next question
+	Give two function
+		LogStart(uint eventID, int startTime)
+		LogEnd(uint eventID, int endTime)
+	A set of events call LogStart when they start and LogEnd when they end. Extend logStart / logEnd ( if u want ) and write a function which returns the logID’s of all completed events after the last call sorted by startTime. Do note that you should not output event x if there is any event which started before X and is not complete yet. The best solution has time complexity of LogStart O(1), LogEnd O(1). getLog() O(n). Though obviously if u know the time complexity up front it’s easy to figure out the solution. 
+
+
